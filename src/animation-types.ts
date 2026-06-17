@@ -40,11 +40,6 @@ export interface AnimationConfig {
   customName?: string;
 }
 
-/** Every built-in effect — always available regardless of channel. */
-export const ALL_EFFECTS: AnimationEffect[] = [
-  'pulse', 'glow', 'shimmer', 'gradient', 'blink', 'breathe', 'custom',
-];
-
 /** Suggested effects per channel (used for warnings only). */
 export const EFFECTS_BY_CHANNEL: Record<AnimationChannel, AnimationEffect[]> = {
   background: ['pulse', 'glow', 'shimmer', 'gradient', 'blink', 'breathe', 'custom'],

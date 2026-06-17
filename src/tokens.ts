@@ -42,25 +42,8 @@ export const COLOR_TOKENS: Record<BadgeColor, ColorRoles> = {
   purple: { fg: '#432dd7', soft: '#e0e7ff', solid: '#4f39f6', onSolid: '#eef2ff', border: '#c6d2ff' },
 };
 
-export interface SizeSpec {
-  fontSize: string;
-  /** Vertical padding (top & bottom). */
-  padY: string;
-  /** Horizontal padding (left & right). */
-  padX: string;
-  /** Outer box height. */
-  height: string;
-}
-
-export const SIZE_TOKENS: Record<BadgeSize, SizeSpec> = {
-  default: { fontSize: '12px', padY: '8px', padX: '6px', height: '25px' },
-  small: { fontSize: '10px', padY: '6px', padX: '4px', height: '19px' },
-};
-
 export const RADIUS = '4px';
 export const FONT_FAMILY =
   "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif";
 
 export const COLORS = Object.keys(COLOR_TOKENS) as BadgeColor[];
-export const VARIANTS: BadgeVariant[] = ['soft', 'solid', 'outline'];
-export const SIZES: BadgeSize[] = ['default', 'small'];

@@ -1,29 +1,24 @@
 {
   "name": "animated-badge",
   "version": "1.0.0",
-  "description": "A framework-agnostic <animated-badge> Web Component with a code-driven animation constructor for animating background, fill, stroke and outline.",
+  "description": "A framework-agnostic <animated-badge> Web Component with a code-driven animation constructor.",
   "type": "module",
-  "main": "./dist/animated-badge.js",
-  "module": "./dist/animated-badge.js",
+  "main": "./dist/animated-badge.min.js",
+  "module": "./dist/animated-badge.esm.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/animated-badge.js"
-    },
-    "./react": {
-      "types": "./dist/react/Badge.d.ts",
-      "import": "./dist/react/Badge.js"
+      "import": "./dist/animated-badge.esm.js",
+      "default": "./dist/animated-badge.min.js"
     }
   },
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
   "scripts": {
     "dev": "vite",
     "build": "tsc -p tsconfig.build.json && vite build",
-    "preview": "vite preview",
     "typecheck": "tsc --noEmit"
   },
   "keywords": [
@@ -37,16 +32,10 @@
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^4.7.0",
+    "dialkit": "^1.2.0",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
     "typescript": "^5.5.4",
     "vite": "^5.4.0"
-  },
-  "dependencies": {
-    "dialkit": "^1.2.0",
-    "motion": "^12.40.0",
-    "react": "^19.2.7",
-    "react-dom": "^19.2.7"
-  },
-  "peerDependencies": {
-    "react": ">=17"
   }
 }
