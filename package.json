@@ -11,6 +11,10 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/animated-badge.esm.js",
       "default": "./dist/animated-badge.min.js"
+    },
+    "./react": {
+      "types": "./dist/react/index.d.ts",
+      "import": "./dist/react/index.js"
     }
   },
   "files": [
@@ -19,7 +23,7 @@
   "scripts": {
     "dev": "vite",
     "build": "npm run build:lib && npm run build:site",
-    "build:lib": "tsc -p tsconfig.build.json && vite build --config vite.lib.config.ts",
+    "build:lib": "vite build --config vite.lib.config.ts && vite build --config vite.react.config.ts && tsc -p tsconfig.build.json",
     "build:site": "vite build",
     "typecheck": "tsc --noEmit"
   },
@@ -30,6 +34,14 @@
     "animation"
   ],
   "license": "MIT",
+  "peerDependencies": {
+    "react": ">=17"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    }
+  },
   "devDependencies": {
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",

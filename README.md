@@ -86,12 +86,38 @@ badge.registerKeyframes('spin', `0%{transform:rotate(0)} 100%{transform:rotate(3
 new BadgeAnimator(badge).custom('spin');
 ```
 
+## React (optional)
+
+```bash
+npm install animated-badge react react-dom
+```
+
+```tsx
+import { Badge, type BadgeHandle } from 'animated-badge/react';
+import { useRef } from 'react';
+
+function Example() {
+  const ref = useRef<BadgeHandle>(null);
+  return (
+    <>
+      <Badge ref={ref} color="blue" variant="solid" animation={{ effect: 'glow' }}>
+        New
+      </Badge>
+      <button onClick={() => ref.current?.pause()}>Pause</button>
+    </>
+  );
+}
+```
+
+`react` is a peer dependency for `animated-badge/react` only — the core Web Component has no React dependency.
+
 ## Build output
 
 | File | Use |
 | --- | --- |
-| `dist/animated-badge.esm.js` | `import` |
+| `dist/animated-badge.esm.js` | `import` (core) |
 | `dist/animated-badge.min.js` | `<script>` (global `AnimatedBadge`) |
+| `dist/react/index.js` | `import` from `animated-badge/react` |
 
 ## Project layout
 
@@ -103,4 +129,5 @@ src/
   animation-types.ts types & defaults
   tokens.ts          colours
   styles.ts          shadow-DOM CSS
+  react/Badge.tsx    optional React wrapper
 ```

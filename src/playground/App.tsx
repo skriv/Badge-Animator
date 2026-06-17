@@ -26,6 +26,7 @@ function Playground() {
       variant: { type: 'select', options: ['soft', 'solid', 'outline'], default: 'soft' },
       small: false,
       effect: { type: 'select', options: [...EFFECTS], default: 'glow' },
+      reactCode: false,
       playback: {
         togglePlay: { type: 'action' },
         stop: { type: 'action' },
@@ -96,6 +97,7 @@ function Playground() {
     label: params.label,
     config: { effect, customName: effect === 'custom' ? 'rainbow' : undefined },
     stopped,
+    format: params.reactCode ? 'react' : 'js',
   });
 
   const copy = async () => {
@@ -124,7 +126,7 @@ function Playground() {
       </div>
       <div className="code-block">
         <div className="code-header">
-          <span>Code</span>
+          <span>Code {params.reactCode ? '(React)' : '(JS)'}</span>
           <button type="button" className="act" onClick={copy}>{copied ? 'Copied!' : 'Copy'}</button>
         </div>
         <pre

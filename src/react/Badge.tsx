@@ -40,8 +40,8 @@ declare module 'react' {
 }
 
 /**
- * Thin React wrapper around the `<animated-badge>` custom element. Object props
- * (the `animation` config) are assigned imperatively; primitives map to attributes.
+ * Thin React wrapper around `<animated-badge>`. Primitives map to attributes;
+ * the `animation` object is assigned imperatively on the underlying element.
  */
 export const Badge = React.forwardRef<BadgeHandle, BadgeProps>(function Badge(
   { id, color = 'grey', variant = 'soft', size = 'default', animation = null, children, className, style },
