@@ -18,7 +18,9 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build": "tsc -p tsconfig.build.json && vite build",
+    "build": "npm run build:lib && npm run build:site",
+    "build:lib": "tsc -p tsconfig.build.json && vite build --config vite.lib.config.ts",
+    "build:site": "vite build",
     "typecheck": "tsc --noEmit"
   },
   "keywords": [
