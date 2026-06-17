@@ -154,7 +154,7 @@ export function App() {
         <h2>Animation constructor — playground</h2>
         <Playground />
       </div>
-      <DialRoot theme="light" position="top-right" defaultOpen />
+      <DialRoot theme="light" position="top-right" defaultOpen productionEnabled />
     </>
   );
 }
